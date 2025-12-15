@@ -1,0 +1,84 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:GetStartedApp.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="600"
+        x:Class="GetStartedApp.Views.MenuWindow"
+        x:DataType="vm:MenuWindowViewModel"
+        Title="Menu"
+        Background="#2C3E50"
+        WindowStartupLocation="CenterScreen">
+
+    <Design.DataContext>
+        <vm:MenuWindowViewModel/>
+    </Design.DataContext>
+
+    <Grid RowDefinitions="*,Auto,*" ColumnDefinitions="*">
+        <!-- Title -->
+        <StackPanel Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" Spacing="30">
+            <TextBlock Text="Główne Menu" 
+                       FontSize="48" 
+                       FontWeight="Bold"
+                       Foreground="White"
+                       HorizontalAlignment="Center"
+                       Margin="0,0,0,40"/>
+
+            <!-- Buttons -->
+            <StackPanel Spacing="20" HorizontalAlignment="Center">
+                <!-- Keyboard Button -->
+                <Button Width="350" 
+                        Height="120"
+                        Content="KLAWIATURA"
+                        FontSize="32"
+                        FontWeight="Bold"
+                        Background="#3498DB"
+                        Foreground="White"
+                        CornerRadius="10"
+                        Click="KeyboardButton_Click"
+                        HorizontalContentAlignment="Center"
+                        VerticalContentAlignment="Center"
+                        Cursor="Hand"/>
+
+                <!-- Settings Button -->
+                <Button Width="350" 
+                        Height="120"
+                        Content="USTAWIENIA"
+                        FontSize="32"
+                        FontWeight="Bold"
+                        Background="#E74C3C"
+                        Foreground="White"
+                        CornerRadius="10"
+                        Click="SettingsButton_Click"
+                        HorizontalContentAlignment="Center"
+                        VerticalContentAlignment="Center"
+                        Cursor="Hand"/>
+
+                <!-- Language Button -->
+                <Button Width="350" 
+                        Height="120"
+                        Content="JĘZYK"
+                        FontSize="32"
+                        FontWeight="Bold"
+                        Background="#27AE60"
+                        Foreground="White"
+                        CornerRadius="10"
+                        Click="LanguageButton_Click"
+                        HorizontalContentAlignment="Center"
+                        VerticalContentAlignment="Center"
+                        Cursor="Hand"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+
+    <Window.Styles>
+        <!-- Disable hover/pressed effects on buttons -->
+        <Style Selector="Button:pointerover /template/ ContentPresenter">
+            <Setter Property="Background" Value="{TemplateBinding Background}"/>
+        </Style>
+        <Style Selector="Button:pressed /template/ ContentPresenter">
+            <Setter Property="Background" Value="{TemplateBinding Background}"/>
+        </Style>
+    </Window.Styles>
+
+</Window>
