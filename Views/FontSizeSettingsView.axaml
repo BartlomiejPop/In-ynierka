@@ -1,0 +1,98 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="600"
+        x:Class="GetStartedApp.Views.FontSizeSettingsView"
+        Title="Rozmiar Czcionki"
+        Background="#2C3E50"
+        WindowStartupLocation="CenterScreen"
+        Width="700" Height="400">
+
+    <Grid RowDefinitions="Auto,*,Auto" Margin="40">
+        <!-- Title -->
+        <TextBlock Grid.Row="0"
+                   Text="Rozmiar Czcionki" 
+                   FontSize="36" 
+                   FontWeight="Bold"
+                   Foreground="White"
+                   HorizontalAlignment="Center"
+                   Margin="0,0,0,40"/>
+
+        <!-- Content -->
+        <StackPanel Grid.Row="1" 
+                    Spacing="30" 
+                    VerticalAlignment="Center">
+            
+            <!-- Current Font Size Display -->
+            <TextBlock x:Name="FontSizeDisplay"
+                       Text="Rozmiar: 20px" 
+                       FontSize="28" 
+                       Foreground="White"
+                       HorizontalAlignment="Center"
+                       Margin="0,0,0,20"/>
+
+            <!-- Font Size Slider -->
+            <StackPanel Spacing="15">
+                <Slider x:Name="FontSizeSlider"
+                        Minimum="14"
+                        Maximum="30"
+                        Value="20"
+                        TickFrequency="1"
+                        IsSnapToTickEnabled="True"
+                        Width="500"
+                        Height="40"
+                        Foreground="#3498DB"
+                        ValueChanged="FontSizeSlider_ValueChanged"/>
+
+                <!-- Min and Max Labels -->
+                <Grid Width="500">
+                    <TextBlock Text="14px" 
+                               FontSize="18"
+                               Foreground="#95A5A6"
+                               HorizontalAlignment="Left"/>
+                    <TextBlock Text="30px" 
+                               FontSize="18"
+                               Foreground="#95A5A6"
+                               HorizontalAlignment="Right"/>
+                </Grid>
+            </StackPanel>
+
+            <!-- Preview Text -->
+            <Border Background="#34495E"
+                    CornerRadius="10"
+                    Padding="20"
+                    Margin="0,20,0,0">
+                <TextBlock x:Name="PreviewText"
+                           Text="Podgląd tekstu" 
+                           FontSize="20"
+                           Foreground="White"
+                           HorizontalAlignment="Center"/>
+            </Border>
+        </StackPanel>
+
+        <!-- Save Button -->
+        <Button Grid.Row="2"
+                Width="300" 
+                Height="60"
+                Content="ZAPISZ"
+                FontSize="24"
+                FontWeight="Bold"
+                Background="#27AE60"
+                Foreground="White"
+                CornerRadius="10"
+                HorizontalAlignment="Center"
+                Click="SaveButton_Click"
+                Cursor="Hand"/>
+    </Grid>
+
+    <Window.Styles>
+        <Style Selector="Button:pointerover /template/ ContentPresenter">
+            <Setter Property="Background" Value="{TemplateBinding Background}"/>
+        </Style>
+        <Style Selector="Button:pressed /template/ ContentPresenter">
+            <Setter Property="Background" Value="{TemplateBinding Background}"/>
+        </Style>
+    </Window.Styles>
+
+</Window>

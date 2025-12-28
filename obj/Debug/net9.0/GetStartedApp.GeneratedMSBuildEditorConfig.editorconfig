@@ -7,8 +7,6 @@ build_property.AvaloniaNameGeneratorFilterByNamespace = *
 build_property.AvaloniaNameGeneratorViewFileNamingStrategy = NamespaceAndClassName
 build_property.AvaloniaNameGeneratorAttachDevTools = true
 build_property.TargetFramework = net9.0
-build_property.TargetFrameworkIdentifier = .NETCoreApp
-build_property.TargetFrameworkVersion = v9.0
 build_property.TargetPlatformMinVersion = 
 build_property.UsingMicrosoftNETSdkWeb = 
 build_property.ProjectTypeGuids = 
@@ -17,17 +15,47 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = GetStartedApp
-build_property.ProjectDir = C:\Users\atus9\OneDrive\Desktop\inżynierka\GetStartedApp\
+build_property.ProjectDir = C:\Users\barpo\In-ynierka\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.EffectiveAnalysisLevelStyle = 9.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/atus9/OneDrive/Desktop/inżynierka/GetStartedApp/App.axaml]
+[C:/Users/barpo/In-ynierka/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/atus9/OneDrive/Desktop/inżynierka/GetStartedApp/Views/KeyboardView.axaml]
+[C:/Users/barpo/In-ynierka/Views/AndroidTvView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/atus9/OneDrive/Desktop/inżynierka/GetStartedApp/Views/MenuWindow.axaml]
+[C:/Users/barpo/In-ynierka/Views/ButtonSizeSettingsView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[C:/Users/barpo/In-ynierka/Views/FontSizeSettingsView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[C:/Users/barpo/In-ynierka/Views/InfoView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[C:/Users/barpo/In-ynierka/Views/KeyboardView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[C:/Users/barpo/In-ynierka/Views/LanguageView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[C:/Users/barpo/In-ynierka/Views/MenuWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[C:/Users/barpo/In-ynierka/Views/OneHandKeyboardSettingsView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[C:/Users/barpo/In-ynierka/Views/OneHandKeyboardView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[C:/Users/barpo/In-ynierka/Views/SettingsView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[C:/Users/barpo/In-ynierka/Views/ThemesView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[C:/Users/barpo/In-ynierka/Views/WordListView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml

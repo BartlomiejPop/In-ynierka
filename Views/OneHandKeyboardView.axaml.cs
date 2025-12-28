@@ -7,16 +7,16 @@ using System.Linq;
 
 namespace GetStartedApp.Views;
 
-public partial class KeyboardView : Window
+public partial class OneHandKeyboardView : Window
 {
     private bool isCapsLocked = false;
 
-    public KeyboardView()
+    public OneHandKeyboardView()
     {
         InitializeComponent();
         Background = new SolidColorBrush(Color.Parse(LanguageService.GetKeyboardBackgroundColor()));
         ApplyThemeToStackPanels();
-        ApplyButtonSizeScaling();
+        ApplyAlignment();
     }
 
     private void ApplyThemeToStackPanels()
@@ -31,33 +31,25 @@ public partial class KeyboardView : Window
         }
     }
 
-    private void ApplyButtonSizeScaling()
+    private void ApplyAlignment()
     {
-        double scale = GetButtonSizeScale();
+        string alignment = LanguageService.OneHandKeyboardAlignment;
         
-        // Apply scale to Window size
-        Width = 1300 * scale;
-        Height = 420 * scale;
-        
-        // Scale the keyboard container
-        if (this.FindControl<Viewbox>("KeyboardContainer") is Viewbox container)
+        // Get screen dimensions
+        var screen = Screens.Primary;
+        if (screen != null)
         {
-            container.Width = 1260 * scale;
-            container.Height = 380 * scale;
+            var workingArea = screen.WorkingArea;
+            
+            if (alignment == "left")
+            {
+                Position = new Avalonia.PixelPoint(0, (int)(workingArea.Height - Height) / 2);
+            }
+            else
+            {
+                Position = new Avalonia.PixelPoint((int)(workingArea.Width - Width), (int)(workingArea.Height - Height) / 2);
+            }
         }
-    }
-
-    private double GetButtonSizeScale()
-    {
-        return LanguageService.GlobalButtonSize switch
-        {
-            "xs" => 0.7,
-            "s" => 0.85,
-            "md" => 1.0,
-            "l" => 1.15,
-            "xl" => 1.3,
-            _ => 1.0
-        };
     }
 
     private void KeyButton_Click(object? sender, RoutedEventArgs e)

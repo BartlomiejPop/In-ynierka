@@ -17,20 +17,22 @@
     <Grid RowDefinitions="*,Auto,*" ColumnDefinitions="*">
         <!-- Title -->
         <StackPanel Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" Spacing="30">
-            <TextBlock Text="Główne Menu" 
+            <TextBlock x:Name="TitleText"
+                       Text="Główne Menu" 
                        FontSize="48" 
-                       FontWeight="Bold"
+                       FontWeight="Bold"    
                        Foreground="White"
                        HorizontalAlignment="Center"
                        Margin="0,0,0,40"/>
 
             <!-- Buttons -->
-            <StackPanel Spacing="20" HorizontalAlignment="Center">
+            <StackPanel Orientation="Horizontal" Spacing="20" HorizontalAlignment="Center">
                 <!-- Keyboard Button -->
-                <Button Width="350" 
-                        Height="120"
+                <Button x:Name="KeyboardButton"
+                        Width="200" 
+                        Height="200"
                         Content="KLAWIATURA"
-                        FontSize="32"
+                        FontSize="14"
                         FontWeight="Bold"
                         Background="#3498DB"
                         Foreground="White"
@@ -41,10 +43,11 @@
                         Cursor="Hand"/>
 
                 <!-- Settings Button -->
-                <Button Width="350" 
-                        Height="120"
+                <Button x:Name="SettingsButton"
+                        Width="200" 
+                        Height="200"
                         Content="USTAWIENIA"
-                        FontSize="32"
+                        FontSize="14"
                         FontWeight="Bold"
                         Background="#E74C3C"
                         Foreground="White"
@@ -55,10 +58,11 @@
                         Cursor="Hand"/>
 
                 <!-- Language Button -->
-                <Button Width="350" 
-                        Height="120"
+                <Button x:Name="LanguageButton"
+                        Width="200" 
+                        Height="200"
                         Content="JĘZYK"
-                        FontSize="32"
+                        FontSize="14"
                         FontWeight="Bold"
                         Background="#27AE60"
                         Foreground="White"
@@ -67,6 +71,40 @@
                         HorizontalContentAlignment="Center"
                         VerticalContentAlignment="Center"
                         Cursor="Hand"/>
+
+                <!-- Android TV Button -->
+                <Button x:Name="AndroidTvButton"
+                        Width="200" 
+                        Height="200"
+                        Content="ANDROID TV"
+                        FontSize="14"
+                        FontWeight="Bold"
+                        Background="#9B59B6"
+                        Foreground="White"
+                        CornerRadius="10"
+                        Click="AndroidTvButton_Click"
+                        HorizontalContentAlignment="Center"
+                        VerticalContentAlignment="Center"
+                        Cursor="Hand"/>
+
+                <!-- One Hand Keyboard Button -->
+                <Button x:Name="OneHandKeyboardButton"
+                        Width="200" 
+                        Height="200"
+                        FontSize="14"
+                        FontWeight="Bold"
+                        Background="#F39C12"
+                        Foreground="White"
+                        CornerRadius="10"
+                        Click="OneHandKeyboardButton_Click"
+                        HorizontalContentAlignment="Center"
+                        VerticalContentAlignment="Center"
+                        Cursor="Hand">
+                    <TextBlock Text="KLAWIATURA JEDNORĘCZNA"
+                               TextWrapping="Wrap"
+                               TextAlignment="Center"
+                               Padding="10"/>
+                </Button>
             </StackPanel>
         </StackPanel>
     </Grid>

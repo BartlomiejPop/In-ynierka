@@ -1,0 +1,131 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:GetStartedApp.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="600"
+        x:Class="GetStartedApp.Views.SettingsView"
+        Title="Ustawienia"
+        Background="#2C3E50"
+        WindowStartupLocation="CenterScreen"
+        Width="900" Height="700">
+
+    <Grid RowDefinitions="Auto,*" ColumnDefinitions="*">
+        <!-- Title -->
+        <TextBlock x:Name="TitleText"
+                   Grid.Row="0"
+                   Text="Ustawienia" 
+                   FontSize="48" 
+                   FontWeight="Bold"
+                   Foreground="White"
+                   HorizontalAlignment="Center"
+                   Margin="0,40,0,40"/>
+
+        <!-- Buttons -->
+        <StackPanel Grid.Row="1" 
+                    Spacing="20" 
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+            
+            <!-- Info Button -->
+            <Button x:Name="InfoButton"
+                    Width="500" 
+                    Height="80"
+                    Content="INFO"
+                    FontSize="28"
+                    FontWeight="Bold"
+                    Background="#3498DB"
+                    Foreground="White"
+                    CornerRadius="10"
+                    Click="InfoButton_Click"
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    Cursor="Hand"/>
+
+            <!-- Wi-Fi Button -->
+            <Button x:Name="WiFiButton"
+                    Width="500" 
+                    Height="80"
+                    Content="WI-FI"
+                    FontSize="28"
+                    FontWeight="Bold"
+                    Background="#9B59B6"
+                    Foreground="White"
+                    CornerRadius="10"
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    Cursor="Hand"/>
+
+            <!-- Font Size Button -->
+            <Button x:Name="FontSizeButton"
+                    Width="500" 
+                    Height="80"
+                    Content="ROZMIAR CZCIONKI"
+                    FontSize="28"
+                    FontWeight="Bold"
+                    Background="#E67E22"
+                    Foreground="White"
+                    CornerRadius="10"
+                    Click="FontSizeButton_Click"
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    Cursor="Hand"/>
+
+            <!-- Button Size Button -->
+            <Button x:Name="ButtonSizeButton"
+                    Width="500" 
+                    Height="80"
+                    Content="ROZMIAR KLAWIATURY"
+                    FontSize="28"
+                    FontWeight="Bold"
+                    Background="#1ABC9C"
+                    Foreground="White"
+                    CornerRadius="10"
+                    Click="ButtonSizeButton_Click"
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    Cursor="Hand"/>
+
+            <!-- Word List Button -->
+            <Button x:Name="WordListButton"
+                    Width="500" 
+                    Height="80"
+                    Content="LISTA SŁÓW"
+                    FontSize="28"
+                    FontWeight="Bold"
+                    Background="#F39C12"
+                    Foreground="White"
+                    CornerRadius="10"
+                    Click="WordListButton_Click"
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    Cursor="Hand"/>
+
+            <!-- Themes Button -->
+            <Button x:Name="ThemesButton"
+                    Width="500" 
+                    Height="80"
+                    Content="MOTYWY"
+                    FontSize="28"
+                    FontWeight="Bold"
+                    Background="#E74C3C"
+                    Foreground="White"
+                    CornerRadius="10"
+                    Click="ThemesButton_Click"
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    Cursor="Hand"/>
+        </StackPanel>
+    </Grid>
+
+    <Window.Styles>
+        <!-- Disable hover/pressed effects on buttons -->
+        <Style Selector="Button:pointerover /template/ ContentPresenter">
+            <Setter Property="Background" Value="{TemplateBinding Background}"/>
+        </Style>
+        <Style Selector="Button:pressed /template/ ContentPresenter">
+            <Setter Property="Background" Value="{TemplateBinding Background}"/>
+        </Style>
+    </Window.Styles>
+
+</Window>

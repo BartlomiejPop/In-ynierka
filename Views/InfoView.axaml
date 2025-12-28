@@ -1,0 +1,92 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="600"
+        x:Class="GetStartedApp.Views.InfoView"
+        Title="O PowerHID"
+        Background="#3C4557"
+        WindowStartupLocation="CenterScreen"
+        Width="1000" Height="700">
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel Margin="60,50,60,50" Spacing="30">
+            <!-- Title -->
+            <TextBlock Text="O PowerHID" 
+                       FontSize="48" 
+                       FontWeight="Bold"
+                       Foreground="White"
+                       HorizontalAlignment="Center"
+                       Margin="0,0,0,20"/>
+
+            <!-- Description -->
+            <TextBlock TextWrapping="Wrap"
+                       FontSize="18"
+                       Foreground="White"
+                       LineHeight="32"
+                       TextAlignment="Left"
+                       Margin="0,0,0,20">
+                <Run Text="PowerHID to inteligentna klawiatura stworzona dla lepszej dostępności. Dostosuj rozmiary przycisków, układy i metody wprowadzania tekstu dla idealnego doświadczenia. Obsługa wielu profili i spersonalizowanych ustawień."/>
+            </TextBlock>
+
+            <!-- Features Section -->
+            <StackPanel Spacing="15">
+                <TextBlock Text="Features" 
+                           FontSize="32" 
+                           FontWeight="Bold"
+                           Foreground="White"
+                           Margin="0,20,0,10"/>
+
+                <Border Background="#1C1C2E"
+                        CornerRadius="10"
+                        Padding="30">
+                    <StackPanel Spacing="20">
+                        <!-- Feature 1 -->
+                        <TextBlock Text="Konfigurowalne układy klawiszy" 
+                                   FontSize="20"
+                                   Foreground="White"/>
+
+                        <!-- Feature 2 -->
+                        <TextBlock Text="Motywy z wysokim kontrastem" 
+                                   FontSize="20"
+                                   Foreground="White"/>
+
+                        <!-- Feature 3 -->
+                        <TextBlock Text="Obsługa jedną ręką" 
+                                   FontSize="20"
+                                   Foreground="White"/>
+
+                        <!-- Feature 4 -->
+                        <TextBlock Text="Adaptacyjne metody wprowadzania" 
+                                   FontSize="20"
+                                   Foreground="White"/>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+
+            <!-- Close Button -->
+            <Button Width="300" 
+                    Height="60"
+                    Content="ZAMKNIJ"
+                    FontSize="20"
+                    FontWeight="Bold"
+                    Background="#3498DB"
+                    Foreground="White"
+                    CornerRadius="10"
+                    HorizontalAlignment="Center"
+                    Click="CloseButton_Click"
+                    Cursor="Hand"
+                    Margin="0,20,0,0"/>
+        </StackPanel>
+    </ScrollViewer>
+
+    <Window.Styles>
+        <Style Selector="Button:pointerover /template/ ContentPresenter">
+            <Setter Property="Background" Value="{TemplateBinding Background}"/>
+        </Style>
+        <Style Selector="Button:pressed /template/ ContentPresenter">
+            <Setter Property="Background" Value="{TemplateBinding Background}"/>
+        </Style>
+    </Window.Styles>
+
+</Window>

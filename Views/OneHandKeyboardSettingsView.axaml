@@ -1,0 +1,125 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="600"
+        x:Class="GetStartedApp.Views.OneHandKeyboardSettingsView"
+        Title="Klawiatura Jedną Ręką"
+        Background="#2C3E50"
+        WindowStartupLocation="CenterScreen"
+        Width="700" Height="500">
+
+    <Grid RowDefinitions="Auto,*,Auto" Margin="40">
+        <!-- Title -->
+        <TextBlock x:Name="TitleText"
+                   Grid.Row="0"
+                   Text="Klawiatura Jedną Ręką" 
+                   FontSize="36" 
+                   FontWeight="Bold"
+                   Foreground="White"
+                   HorizontalAlignment="Center"
+                   Margin="0,0,0,20"/>
+        
+        <TextBlock x:Name="DescText"
+                   Grid.Row="0"
+                   Text="Wybierz wyrównanie klawiatury"
+                   FontSize="18"
+                   Foreground="#BDC3C7"
+                   HorizontalAlignment="Center"
+                   Margin="0,60,0,20"/>
+
+        <!-- Content -->
+        <StackPanel Grid.Row="1" 
+                    Spacing="30" 
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center">
+            
+            <!-- Left Alignment Button -->
+            <Button x:Name="LeftButton"
+                    Width="500" 
+                    Height="120"
+                    Background="#2C3E50"
+                    BorderBrush="#7F8C8D"
+                    BorderThickness="3"
+                    CornerRadius="10"
+                    Click="LeftButton_Click"
+                    HorizontalContentAlignment="Left"
+                    Cursor="Hand">
+                <StackPanel Orientation="Horizontal" Margin="30,0,0,0" Spacing="20">
+                    <TextBlock Text="←" 
+                               FontSize="48"
+                               VerticalAlignment="Center"
+                               Foreground="White"/>
+                    <StackPanel VerticalAlignment="Center">
+                        <TextBlock x:Name="LeftAlignmentText"
+                                   Text="Lewe wyrównanie" 
+                                   FontSize="28"
+                                   FontWeight="Bold"
+                                   Foreground="White"/>
+                        <TextBlock x:Name="LeftAlignmentDescText"
+                                   Text="Klawiatura po lewej stronie" 
+                                   FontSize="16"
+                                   Foreground="#BDC3C7"
+                                   Margin="0,5,0,0"/>
+                    </StackPanel>
+                </StackPanel>
+            </Button>
+
+            <!-- Right Alignment Button -->
+            <Button x:Name="RightButton"
+                    Width="500" 
+                    Height="120"
+                    Background="#2C3E50"
+                    BorderBrush="#3498DB"
+                    BorderThickness="3"
+                    CornerRadius="10"
+                    Click="RightButton_Click"
+                    HorizontalContentAlignment="Left"
+                    Cursor="Hand">
+                <StackPanel Orientation="Horizontal" Margin="30,0,0,0" Spacing="20">
+                    <TextBlock Text="→" 
+                               FontSize="48"
+                               VerticalAlignment="Center"
+                               Foreground="White"/>
+                    <StackPanel VerticalAlignment="Center">
+                        <TextBlock x:Name="RightAlignmentText"
+                                   Text="Prawe wyrównanie" 
+                                   FontSize="28"
+                                   FontWeight="Bold"
+                                   Foreground="White"/>
+                        <TextBlock x:Name="RightAlignmentDescText"
+                                   Text="Klawiatura po prawej stronie" 
+                                   FontSize="16"
+                                   Foreground="#BDC3C7"
+                                   Margin="0,5,0,0"/>
+                    </StackPanel>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+
+        <!-- Open Button -->
+        <Button x:Name="OpenButtonControl"
+                Grid.Row="2"
+                Width="300" 
+                Height="60"
+                Content="OTWÓRZ KLAWIATURĘ"
+                FontSize="24"
+                FontWeight="Bold"
+                Background="#27AE60"
+                Foreground="White"
+                CornerRadius="10"
+                HorizontalAlignment="Center"
+                Click="OpenButton_Click"
+                Cursor="Hand"/>
+    </Grid>
+
+    <Window.Styles>
+        <Style Selector="Button:pointerover /template/ ContentPresenter">
+            <Setter Property="Background" Value="{TemplateBinding Background}"/>
+        </Style>
+        <Style Selector="Button:pressed /template/ ContentPresenter">
+            <Setter Property="Background" Value="{TemplateBinding Background}"/>
+        </Style>
+    </Window.Styles>
+
+</Window>

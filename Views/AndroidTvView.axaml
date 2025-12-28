@@ -1,0 +1,264 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="600"
+        x:Class="GetStartedApp.Views.AndroidTvView"
+        Title="Android TV Remote"
+        Background="#3C4557"
+        WindowStartupLocation="CenterScreen"
+        Width="1200" Height="800">
+
+    <Grid>
+        <!-- Power Button (Top Left) -->
+        <Button Width="100" 
+                Height="100"
+                Background="#6B6B83"
+                CornerRadius="20"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Margin="35,20,0,0"
+                Cursor="Hand">
+            <TextBlock Text="⏻" 
+                       FontSize="64"
+                       Foreground="White"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"/>
+        </Button>
+
+        <!-- Main Remote Panel -->
+        <Border Width="950" 
+                Height="680"
+                CornerRadius="30"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center">
+            <Grid>
+                <!-- Volume Up (Left) -->
+                <Button Width="140" 
+                        Height="300"
+                        Background="#6B6B83"
+                        CornerRadius="20"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Margin="35,90,0,0"
+                        Cursor="Hand">
+                    <TextBlock Text="+" 
+                               FontSize="72"
+                               FontWeight="Bold"
+                               Foreground="White"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"/>
+                </Button>
+
+                <!-- Volume Down (Left) -->
+                <Button Width="140" 
+                        Height="300"
+                        Background="#6B6B83"
+                        CornerRadius="20"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Bottom"
+                        Margin="35,0,0,90"
+                        Cursor="Hand">
+                    <TextBlock Text="−" 
+                               FontSize="72"
+                               FontWeight="Bold"
+                               Foreground="White"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"/>
+                </Button>
+
+                <!-- D-Pad Navigation Center -->
+                <Border Width="500" 
+                        Height="500"
+                        Background="#2C3545"
+                        CornerRadius="80"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center">
+                    <Grid>
+                        <!-- Up Arrow -->
+                        <Button Width="150" 
+                                Height="150"
+                                Background="#6B6B83"
+                                CornerRadius="20"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Top"
+                                Margin="0,15,0,0"
+                                Cursor="Hand">
+                            <TextBlock Text="↑" 
+                                       FontSize="64"
+                                       Foreground="White"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"/>
+                        </Button>
+
+                        <!-- Left Arrow -->
+                        <Button Width="150" 
+                                Height="150"
+                                Background="#6B6B83"
+                                CornerRadius="20"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Center"
+                                Margin="15,0,0,0"
+                                Cursor="Hand">
+                            <TextBlock Text="←" 
+                                       FontSize="64"
+                                       Foreground="White"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"/>
+                        </Button>
+
+                        <!-- OK Button (Center) -->
+                        <Button Width="150" 
+                                Height="150"
+                                Background="#6B6B83"
+                                CornerRadius="20"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Cursor="Hand">
+                            <TextBlock Text="OK" 
+                                       FontSize="36"
+                                       FontWeight="Bold"
+                                       Foreground="White"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"/>
+                        </Button>
+
+                        <!-- Right Arrow -->
+                        <Button Width="150" 
+                                Height="150"
+                                Background="#6B6B83"
+                                CornerRadius="20"
+                                HorizontalAlignment="Right"
+                                VerticalAlignment="Center"
+                                Margin="0,0,15,0"
+                                Cursor="Hand">
+                            <TextBlock Text="→" 
+                                       FontSize="64"
+                                       Foreground="White"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"/>
+                        </Button>
+
+                        <!-- Down Arrow -->
+                        <Button Width="150" 
+                                Height="150"
+                                Background="#6B6B83"
+                                CornerRadius="20"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Bottom"
+                                Margin="0,0,0,15"
+                                Cursor="Hand">
+                            <TextBlock Text="↓" 
+                                       FontSize="64"
+                                       Foreground="White"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"/>
+                        </Button>
+                    </Grid>
+                </Border>
+
+                <!-- Channel Up (Right) -->
+                <Button Width="140" 
+                        Height="300"
+                        Background="#6B6B83"
+                        CornerRadius="20"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Top"
+                        Margin="0,90,35,0"
+                        Cursor="Hand">
+                    <TextBlock Text="↑" 
+                               FontSize="64"
+                               Foreground="White"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"/>
+                </Button>
+
+                <!-- Channel Down (Right) -->
+                <Button Width="140" 
+                        Height="300"
+                        Background="#6B6B83"
+                        CornerRadius="20"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Bottom"
+                        Margin="0,0,35,90"
+                        Cursor="Hand">
+                    <TextBlock Text="↓" 
+                               FontSize="64"
+                               Foreground="White"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"/>
+                </Button>
+            </Grid>
+        </Border>
+
+        <!-- Right Side Control Buttons -->
+        <StackPanel Orientation="Vertical" 
+                    Spacing="20"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Center"
+                    Margin="0,0,35,0">
+            <!-- Home Button -->
+            <Button Width="100" 
+                    Height="100"
+                    Background="#6B6B83"
+                    CornerRadius="20"
+                    Cursor="Hand">
+                <TextBlock Text="🏠" 
+                           FontSize="48"
+                           Foreground="White"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"/>
+            </Button>
+
+            <!-- Back Button -->
+            <Button Width="100" 
+                    Height="100"
+                    Background="#6B6B83"
+                    CornerRadius="20"
+                    Cursor="Hand">
+                <TextBlock Text="↶" 
+                           FontSize="48"
+                           Foreground="White"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"/>
+            </Button>
+
+            <!-- Microphone Button -->
+            <Button Width="100" 
+                    Height="100"
+                    Background="#6B6B83"
+                    CornerRadius="20"
+                    Cursor="Hand">
+                <TextBlock Text="🎤" 
+                           FontSize="48"
+                           Foreground="White"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"/>
+            </Button>
+
+            <!-- Mute Button -->
+            <Button Width="100" 
+                    Height="100"
+                    Background="#6B6B83"
+                    CornerRadius="20"
+                    Cursor="Hand">
+                <TextBlock Text="🔇" 
+                           FontSize="48"
+                           Foreground="White"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"/>
+            </Button>
+        </StackPanel>
+    </Grid>
+
+    <Window.Styles>
+        <!-- Disable hover/pressed effects on buttons -->
+        <Style Selector="Button:pointerover /template/ ContentPresenter">
+            <Setter Property="Background" Value="{TemplateBinding Background}"/>
+        </Style>
+        <Style Selector="Button:pressed /template/ ContentPresenter">
+            <Setter Property="Background" Value="{TemplateBinding Background}"/>
+        </Style>
+    </Window.Styles>
+
+</Window>

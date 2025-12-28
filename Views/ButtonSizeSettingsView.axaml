@@ -1,0 +1,126 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="600"
+        x:Class="GetStartedApp.Views.ButtonSizeSettingsView"
+        Title="Rozmiar Klawiatury"
+        Background="#2C3E50"
+        WindowStartupLocation="CenterScreen"
+        Width="700" Height="500">
+
+    <Grid RowDefinitions="Auto,*,Auto" Margin="40">
+        <!-- Title -->
+        <TextBlock Grid.Row="0"
+                   Text="Rozmiar Klawiatury" 
+                   FontSize="36" 
+                   FontWeight="Bold"
+                   Foreground="White"
+                   HorizontalAlignment="Center"
+                   Margin="0,0,0,40"/>
+
+        <!-- Content -->
+        <StackPanel Grid.Row="1" 
+                    Spacing="20" 
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center">
+            
+            <!-- Size Options -->
+            <StackPanel Spacing="15">
+                <!-- XS -->
+                <Button x:Name="XsButton"
+                        Width="450" 
+                        Height="60"
+                        Content="XS - Bardzo mały"
+                        FontSize="20"
+                        FontWeight="Bold"
+                        Background="#7F8C8D"
+                        Foreground="White"
+                        CornerRadius="10"
+                        Click="XsButton_Click"
+                        HorizontalContentAlignment="Center"
+                        Cursor="Hand"/>
+
+                <!-- S -->
+                <Button x:Name="SButton"
+                        Width="450" 
+                        Height="70"
+                        Content="S - Mały"
+                        FontSize="22"
+                        FontWeight="Bold"
+                        Background="#7F8C8D"
+                        Foreground="White"
+                        CornerRadius="10"
+                        Click="SButton_Click"
+                        HorizontalContentAlignment="Center"
+                        Cursor="Hand"/>
+
+                <!-- MD -->
+                <Button x:Name="MdButton"
+                        Width="450" 
+                        Height="80"
+                        Content="MD - Średni"
+                        FontSize="24"
+                        FontWeight="Bold"
+                        Background="#3498DB"
+                        Foreground="White"
+                        CornerRadius="10"
+                        Click="MdButton_Click"
+                        HorizontalContentAlignment="Center"
+                        Cursor="Hand"/>
+
+                <!-- L -->
+                <Button x:Name="LButton"
+                        Width="450" 
+                        Height="90"
+                        Content="L - Duży"
+                        FontSize="26"
+                        FontWeight="Bold"
+                        Background="#7F8C8D"
+                        Foreground="White"
+                        CornerRadius="10"
+                        Click="LButton_Click"
+                        HorizontalContentAlignment="Center"
+                        Cursor="Hand"/>
+
+                <!-- XL -->
+                <Button x:Name="XlButton"
+                        Width="450" 
+                        Height="100"
+                        Content="XL - Bardzo duży"
+                        FontSize="28"
+                        FontWeight="Bold"
+                        Background="#7F8C8D"
+                        Foreground="White"
+                        CornerRadius="10"
+                        Click="XlButton_Click"
+                        HorizontalContentAlignment="Center"
+                        Cursor="Hand"/>
+            </StackPanel>
+        </StackPanel>
+
+        <!-- Save Button -->
+        <Button Grid.Row="2"
+                Width="300" 
+                Height="60"
+                Content="ZAPISZ"
+                FontSize="24"
+                FontWeight="Bold"
+                Background="#27AE60"
+                Foreground="White"
+                CornerRadius="10"
+                HorizontalAlignment="Center"
+                Click="SaveButton_Click"
+                Cursor="Hand"/>
+    </Grid>
+
+    <Window.Styles>
+        <Style Selector="Button:pointerover /template/ ContentPresenter">
+            <Setter Property="Background" Value="{TemplateBinding Background}"/>
+        </Style>
+        <Style Selector="Button:pressed /template/ ContentPresenter">
+            <Setter Property="Background" Value="{TemplateBinding Background}"/>
+        </Style>
+    </Window.Styles>
+
+</Window>

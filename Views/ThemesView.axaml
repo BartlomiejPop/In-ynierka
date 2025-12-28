@@ -1,0 +1,109 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="600"
+        x:Class="GetStartedApp.Views.ThemesView"
+        Title="Motywy"
+        Background="#2C3E50"
+        WindowStartupLocation="CenterScreen"
+        Width="700" Height="500">
+
+    <Grid RowDefinitions="Auto,*,Auto" Margin="40">
+        <!-- Title -->
+        <TextBlock Grid.Row="0"
+                   Text="Wybierz Motyw" 
+                   FontSize="36" 
+                   FontWeight="Bold"
+                   Foreground="White"
+                   HorizontalAlignment="Center"
+                   Margin="0,0,0,40"/>
+
+        <!-- Content -->
+        <StackPanel Grid.Row="1" 
+                    Spacing="30" 
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center">
+            
+            <!-- Dark Mode Button -->
+            <Button x:Name="DarkModeButton"
+                    Width="500" 
+                    Height="120"
+                    Background="#2C3E50"
+                    BorderBrush="#3498DB"
+                    BorderThickness="3"
+                    CornerRadius="10"
+                    Click="DarkModeButton_Click"
+                    HorizontalContentAlignment="Left"
+                    Cursor="Hand">
+                <StackPanel Orientation="Horizontal" Margin="30,0,0,0" Spacing="20">
+                    <TextBlock Text="🌙" 
+                               FontSize="48"
+                               VerticalAlignment="Center"/>
+                    <StackPanel VerticalAlignment="Center">
+                        <TextBlock Text="Tryb Ciemny" 
+                                   FontSize="28"
+                                   FontWeight="Bold"
+                                   Foreground="White"/>
+                        <TextBlock Text="Ciemne tło, jasny tekst" 
+                                   FontSize="16"
+                                   Foreground="#BDC3C7"
+                                   Margin="0,5,0,0"/>
+                    </StackPanel>
+                </StackPanel>
+            </Button>
+
+            <!-- Light Mode Button -->
+            <Button x:Name="LightModeButton"
+                    Width="500" 
+                    Height="120"
+                    Background="#ECF0F1"
+                    BorderBrush="#7F8C8D"
+                    BorderThickness="3"
+                    CornerRadius="10"
+                    Click="LightModeButton_Click"
+                    HorizontalContentAlignment="Left"
+                    Cursor="Hand">
+                <StackPanel Orientation="Horizontal" Margin="30,0,0,0" Spacing="20">
+                    <TextBlock Text="☀️" 
+                               FontSize="48"
+                               VerticalAlignment="Center"/>
+                    <StackPanel VerticalAlignment="Center">
+                        <TextBlock Text="Tryb Jasny" 
+                                   FontSize="28"
+                                   FontWeight="Bold"
+                                   Foreground="#2C3E50"/>
+                        <TextBlock Text="Jasne tło, ciemny tekst" 
+                                   FontSize="16"
+                                   Foreground="#7F8C8D"
+                                   Margin="0,5,0,0"/>
+                    </StackPanel>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+
+        <!-- Save Button -->
+        <Button Grid.Row="2"
+                Width="300" 
+                Height="60"
+                Content="ZAPISZ"
+                FontSize="24"
+                FontWeight="Bold"
+                Background="#27AE60"
+                Foreground="White"
+                CornerRadius="10"
+                HorizontalAlignment="Center"
+                Click="SaveButton_Click"
+                Cursor="Hand"/>
+    </Grid>
+
+    <Window.Styles>
+        <Style Selector="Button:pointerover /template/ ContentPresenter">
+            <Setter Property="Background" Value="{TemplateBinding Background}"/>
+        </Style>
+        <Style Selector="Button:pressed /template/ ContentPresenter">
+            <Setter Property="Background" Value="{TemplateBinding Background}"/>
+        </Style>
+    </Window.Styles>
+
+</Window>

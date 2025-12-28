@@ -1,0 +1,241 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="600"
+        x:Class="GetStartedApp.Views.WordListView"
+        Title="Lista Słów"
+        Background="#2C3E50"
+        WindowStartupLocation="CenterScreen"
+        Width="1400" Height="900">
+
+    <Grid RowDefinitions="Auto,Auto,*,Auto" Margin="20">
+        <!-- Title -->
+        <TextBlock Grid.Row="0"
+                   Text="Lista Słów" 
+                   FontSize="36" 
+                   FontWeight="Bold"
+                   Foreground="White"
+                   HorizontalAlignment="Center"
+                   Margin="0,0,0,30"/>
+
+        <!-- Instructions -->
+        <TextBlock Grid.Row="1"
+                   Text="Wprowadź swoje słowa (jedno słowo na linię):" 
+                   FontSize="18"
+                   Foreground="#BDC3C7"
+                   Margin="20,0,20,10"/>
+
+        <!-- Content with Text Area and Keyboard -->
+        <Grid Grid.Row="2" ColumnDefinitions="*,Auto" Margin="20,0,20,0">
+            <!-- Left: Text Area -->
+            <StackPanel Grid.Column="0" Spacing="15" Margin="0,0,20,0">
+                <!-- Text Area -->
+                <Border Background="#34495E"
+                        CornerRadius="10"
+                        Padding="15"
+                        Height="500">
+                    <ScrollViewer VerticalScrollBarVisibility="Auto">
+                        <TextBox x:Name="WordListTextBox"
+                                 AcceptsReturn="True"
+                                 TextWrapping="Wrap"
+                                 Background="Transparent"
+                                 Foreground="White"
+                                 FontSize="16"
+                                 BorderThickness="0"
+                                 Watermark="Wprowadź słowa tutaj..."
+                                 MinHeight="480"/>
+                    </ScrollViewer>
+                </Border>
+
+                <!-- Word Count -->
+                <TextBlock x:Name="WordCountText"
+                           Text="Liczba słów: 0" 
+                           FontSize="14"
+                           Foreground="#95A5A6"
+                           HorizontalAlignment="Right"/>
+            </StackPanel>
+
+            <!-- Right: Keyboard -->
+            <Border Grid.Column="1" 
+                    Background="#1a1a1a"
+                    CornerRadius="10"
+                    Padding="15">
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <StackPanel Spacing="6">
+                        <!-- Row 1: Numbers -->
+                        <StackPanel Orientation="Horizontal" Spacing="5">
+                            <Button Classes="key-std" Content="1" Click="KeyButton_Click"/>
+                            <Button Classes="key-std" Content="2" Click="KeyButton_Click"/>
+                            <Button Classes="key-std" Content="3" Click="KeyButton_Click"/>
+                            <Button Classes="key-std" Content="4" Click="KeyButton_Click"/>
+                            <Button Classes="key-std" Content="5" Click="KeyButton_Click"/>
+                            <Button Classes="key-std" Content="6" Click="KeyButton_Click"/>
+                            <Button Classes="key-std" Content="7" Click="KeyButton_Click"/>
+                            <Button Classes="key-std" Content="8" Click="KeyButton_Click"/>
+                            <Button Classes="key-std" Content="9" Click="KeyButton_Click"/>
+                            <Button Classes="key-std" Content="0" Click="KeyButton_Click"/>
+                        </StackPanel>
+
+                        <!-- Row 2: QWERTY -->
+                        <StackPanel Orientation="Horizontal" Spacing="5">
+                            <Button Classes="key-std" Content="Q" Click="KeyButton_Click"/>
+                            <Button Classes="key-std" Content="W" Click="KeyButton_Click"/>
+                            <Button Classes="key-std" Content="E" Click="KeyButton_Click"/>
+                            <Button Classes="key-std" Content="R" Click="KeyButton_Click"/>
+                            <Button Classes="key-std" Content="T" Click="KeyButton_Click"/>
+                            <Button Classes="key-std" Content="Y" Click="KeyButton_Click"/>
+                            <Button Classes="key-std" Content="U" Click="KeyButton_Click"/>
+                            <Button Classes="key-std" Content="I" Click="KeyButton_Click"/>
+                            <Button Classes="key-std" Content="O" Click="KeyButton_Click"/>
+                            <Button Classes="key-std" Content="P" Click="KeyButton_Click"/>
+                        </StackPanel>
+
+                        <!-- Row 3: ASDF -->
+                        <StackPanel Orientation="Horizontal" Spacing="5" HorizontalAlignment="Center">
+                            <Button Classes="key-std" Content="A" Click="KeyButton_Click"/>
+                            <Button Classes="key-std" Content="S" Click="KeyButton_Click"/>
+                            <Button Classes="key-std" Content="D" Click="KeyButton_Click"/>
+                            <Button Classes="key-std" Content="F" Click="KeyButton_Click"/>
+                            <Button Classes="key-std" Content="G" Click="KeyButton_Click"/>
+                            <Button Classes="key-std" Content="H" Click="KeyButton_Click"/>
+                            <Button Classes="key-std" Content="J" Click="KeyButton_Click"/>
+                            <Button Classes="key-std" Content="K" Click="KeyButton_Click"/>
+                            <Button Classes="key-std" Content="L" Click="KeyButton_Click"/>
+                        </StackPanel>
+
+                        <!-- Row 4: ZXCV -->
+                        <StackPanel Orientation="Horizontal" Spacing="5" HorizontalAlignment="Center">
+                            <Button Classes="key-std" Content="Z" Click="KeyButton_Click"/>
+                            <Button Classes="key-std" Content="X" Click="KeyButton_Click"/>
+                            <Button Classes="key-std" Content="C" Click="KeyButton_Click"/>
+                            <Button Classes="key-std" Content="V" Click="KeyButton_Click"/>
+                            <Button Classes="key-std" Content="B" Click="KeyButton_Click"/>
+                            <Button Classes="key-std" Content="N" Click="KeyButton_Click"/>
+                            <Button Classes="key-std" Content="M" Click="KeyButton_Click"/>
+                        </StackPanel>
+
+                        <!-- Row 5: Special Keys -->
+                        <StackPanel Orientation="Horizontal" Spacing="5" HorizontalAlignment="Center">
+                            <Button Classes="key-wide" Content="Space" Click="Space_Click"/>
+                            <Button Classes="key-std" Content="," Click="KeyButton_Click"/>
+                            <Button Classes="key-std" Content="." Click="KeyButton_Click"/>
+                            <Button Classes="key-backspace" Content="⌫" Click="Backspace_Click"/>
+                        </StackPanel>
+
+                        <!-- Row 6: Enter -->
+                        <StackPanel Orientation="Horizontal" Spacing="5" HorizontalAlignment="Center">
+                            <Button Classes="key-enter-full" Content="Enter (Nowa linia)" Click="Enter_Click"/>
+                        </StackPanel>
+                    </StackPanel>
+                </ScrollViewer>
+            </Border>
+        </Grid>
+
+        <!-- Buttons -->
+        <StackPanel Grid.Row="3"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Center"
+                    Spacing="20"
+                    Margin="0,10,0,0">
+            
+            <!-- Clear Button -->
+            <Button Width="200" 
+                    Height="60"
+                    Content="WYCZYŚĆ"
+                    FontSize="20"
+                    FontWeight="Bold"
+                    Background="#E74C3C"
+                    Foreground="White"
+                    CornerRadius="10"
+                    Click="ClearButton_Click"
+                    Cursor="Hand"/>
+
+            <!-- Save Button -->
+            <Button Width="200" 
+                    Height="60"
+                    Content="ZAPISZ"
+                    FontSize="20"
+                    FontWeight="Bold"
+                    Background="#27AE60"
+                    Foreground="White"
+                    CornerRadius="10"
+                    Click="SaveButton_Click"
+                    Cursor="Hand"/>
+        </StackPanel>
+    </Grid>
+
+    <Window.Styles>
+        <!-- Standard key -->
+        <Style Selector="Button.key-std">
+            <Setter Property="Width" Value="65"/>
+            <Setter Property="Height" Value="50"/>
+            <Setter Property="Background" Value="#0066cc"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="CornerRadius" Value="4"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="BorderBrush" Value="#005599"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
+
+        <!-- Wide key for space -->
+        <Style Selector="Button.key-wide">
+            <Setter Property="Width" Value="260"/>
+            <Setter Property="Height" Value="50"/>
+            <Setter Property="Background" Value="#0066cc"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="CornerRadius" Value="4"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="BorderBrush" Value="#005599"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
+
+        <!-- Backspace key -->
+        <Style Selector="Button.key-backspace">
+            <Setter Property="Width" Value="135"/>
+            <Setter Property="Height" Value="50"/>
+            <Setter Property="Background" Value="#cc6600"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="CornerRadius" Value="4"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="BorderBrush" Value="#994d00"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
+
+        <!-- Enter key -->
+        <Style Selector="Button.key-enter-full">
+            <Setter Property="Width" Value="465"/>
+            <Setter Property="Height" Value="50"/>
+            <Setter Property="Background" Value="#27AE60"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="CornerRadius" Value="4"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="BorderBrush" Value="#1e8449"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
+
+        <Style Selector="Button:pointerover /template/ ContentPresenter">
+            <Setter Property="Background" Value="{TemplateBinding Background}"/>
+        </Style>
+        <Style Selector="Button:pressed /template/ ContentPresenter">
+            <Setter Property="Background" Value="#005099"/>
+        </Style>
+    </Window.Styles>
+
+</Window>

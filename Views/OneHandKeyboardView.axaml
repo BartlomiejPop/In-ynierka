@@ -1,0 +1,223 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="600"
+        x:Class="GetStartedApp.Views.OneHandKeyboardView"
+        Title="One Hand Keyboard"
+        Background="#1a1a1a"
+        WindowStartupLocation="Manual"
+        Width="400" Height="850">
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel Background="#1a1a1a" Margin="10" Spacing="5">
+            
+            <!-- Row 1: Esc + Function Keys -->
+            <StackPanel Orientation="Horizontal" Spacing="3" HorizontalAlignment="Center">
+                <Button Classes="key-compact" Content="Esc" Click="KeyButton_Click"/>
+            </StackPanel>
+            
+            <StackPanel Orientation="Horizontal" Spacing="3" HorizontalAlignment="Center">
+                <Button Classes="key-compact" Content="F1" Click="KeyButton_Click"/>
+                <Button Classes="key-compact" Content="F2" Click="KeyButton_Click"/>
+                <Button Classes="key-compact" Content="F3" Click="KeyButton_Click"/>
+                <Button Classes="key-compact" Content="F4" Click="KeyButton_Click"/>
+            </StackPanel>
+            
+            <StackPanel Orientation="Horizontal" Spacing="3" HorizontalAlignment="Center">
+                <Button Classes="key-compact" Content="F5" Click="KeyButton_Click"/>
+                <Button Classes="key-compact" Content="F6" Click="KeyButton_Click"/>
+                <Button Classes="key-compact" Content="F7" Click="KeyButton_Click"/>
+                <Button Classes="key-compact" Content="F8" Click="KeyButton_Click"/>
+            </StackPanel>
+            
+            <StackPanel Orientation="Horizontal" Spacing="3" HorizontalAlignment="Center">
+                <Button Classes="key-compact" Content="F9" Click="KeyButton_Click"/>
+                <Button Classes="key-compact" Content="F10" Click="KeyButton_Click"/>
+                <Button Classes="key-compact" Content="F11" Click="KeyButton_Click"/>
+                <Button Classes="key-compact" Content="F12" Click="KeyButton_Click"/>
+            </StackPanel>
+
+            <!-- Row 2: Numbers -->
+            <StackPanel Orientation="Horizontal" Spacing="3" HorizontalAlignment="Center">
+                <Button Classes="key-compact" Content="`" Click="KeyButton_Click"/>
+                <Button Classes="key-compact" Content="1" Click="KeyButton_Click"/>
+                <Button Classes="key-compact" Content="2" Click="KeyButton_Click"/>
+                <Button Classes="key-compact" Content="3" Click="KeyButton_Click"/>
+            </StackPanel>
+            
+            <StackPanel Orientation="Horizontal" Spacing="3" HorizontalAlignment="Center">
+                <Button Classes="key-compact" Content="4" Click="KeyButton_Click"/>
+                <Button Classes="key-compact" Content="5" Click="KeyButton_Click"/>
+                <Button Classes="key-compact" Content="6" Click="KeyButton_Click"/>
+                <Button Classes="key-compact" Content="7" Click="KeyButton_Click"/>
+            </StackPanel>
+            
+            <StackPanel Orientation="Horizontal" Spacing="3" HorizontalAlignment="Center">
+                <Button Classes="key-compact" Content="8" Click="KeyButton_Click"/>
+                <Button Classes="key-compact" Content="9" Click="KeyButton_Click"/>
+                <Button Classes="key-compact" Content="0" Click="KeyButton_Click"/>
+                <Button Classes="key-compact" Content="-" Click="KeyButton_Click"/>
+            </StackPanel>
+            
+            <StackPanel Orientation="Horizontal" Spacing="3" HorizontalAlignment="Center">
+                <Button Classes="key-compact" Content="=" Click="KeyButton_Click"/>
+                <Button Classes="key-compact-wide" Content="Backspace" Click="Backspace_Click"/>
+            </StackPanel>
+
+            <!-- Row 3: Tab + QWERTY -->
+            <StackPanel Orientation="Horizontal" Spacing="3" HorizontalAlignment="Center">
+                <Button Classes="key-compact" Content="Tab" Click="KeyButton_Click"/>
+                <Button Classes="key-compact" Content="Q" Click="KeyButton_Click"/>
+                <Button Classes="key-compact" Content="W" Click="KeyButton_Click"/>
+                <Button Classes="key-compact" Content="E" Click="KeyButton_Click"/>
+            </StackPanel>
+            
+            <StackPanel Orientation="Horizontal" Spacing="3" HorizontalAlignment="Center">
+                <Button Classes="key-compact" Content="R" Click="KeyButton_Click"/>
+                <Button Classes="key-compact" Content="T" Click="KeyButton_Click"/>
+                <Button Classes="key-compact" Content="Y" Click="KeyButton_Click"/>
+                <Button Classes="key-compact" Content="U" Click="KeyButton_Click"/>
+            </StackPanel>
+            
+            <StackPanel Orientation="Horizontal" Spacing="3" HorizontalAlignment="Center">
+                <Button Classes="key-compact" Content="I" Click="KeyButton_Click"/>
+                <Button Classes="key-compact" Content="O" Click="KeyButton_Click"/>
+                <Button Classes="key-compact" Content="P" Click="KeyButton_Click"/>
+                <Button Classes="key-compact" Content="[" Click="KeyButton_Click"/>
+            </StackPanel>
+            
+            <StackPanel Orientation="Horizontal" Spacing="3" HorizontalAlignment="Center">
+                <Button Classes="key-compact" Content="]" Click="KeyButton_Click"/>
+                <Button Classes="key-compact" Content="\" Click="SpecialKey_Click"/>
+            </StackPanel>
+
+            <!-- Row 4: Caps + ASDF -->
+            <StackPanel Orientation="Horizontal" Spacing="3" HorizontalAlignment="Center">
+                <Button Classes="key-compact" Content="Caps" Click="ToggleCaps_Click"/>
+                <Button Classes="key-compact" Content="A" Click="KeyButton_Click"/>
+                <Button Classes="key-compact" Content="S" Click="KeyButton_Click"/>
+                <Button Classes="key-compact" Content="D" Click="KeyButton_Click"/>
+            </StackPanel>
+            
+            <StackPanel Orientation="Horizontal" Spacing="3" HorizontalAlignment="Center">
+                <Button Classes="key-compact" Content="F" Click="KeyButton_Click"/>
+                <Button Classes="key-compact" Content="G" Click="KeyButton_Click"/>
+                <Button Classes="key-compact" Content="H" Click="KeyButton_Click"/>
+                <Button Classes="key-compact" Content="J" Click="KeyButton_Click"/>
+            </StackPanel>
+            
+            <StackPanel Orientation="Horizontal" Spacing="3" HorizontalAlignment="Center">
+                <Button Classes="key-compact" Content="K" Click="KeyButton_Click"/>
+                <Button Classes="key-compact" Content="L" Click="KeyButton_Click"/>
+                <Button Classes="key-compact" Content=";" Click="SpecialKey_Click"/>
+                <Button Classes="key-compact" Content="'" Click="SpecialKey_Click"/>
+            </StackPanel>
+            
+            <StackPanel Orientation="Horizontal" Spacing="3" HorizontalAlignment="Center">
+                <Button Classes="key-compact-wide" Content="Enter" Click="Enter_Click"/>
+            </StackPanel>
+
+            <!-- Row 5: Shift + ZXCV -->
+            <StackPanel Orientation="Horizontal" Spacing="3" HorizontalAlignment="Center">
+                <Button Classes="key-compact-wide" Content="Shift" Click="KeyButton_Click"/>
+                <Button Classes="key-compact" Content="Z" Click="KeyButton_Click"/>
+                <Button Classes="key-compact" Content="X" Click="KeyButton_Click"/>
+            </StackPanel>
+            
+            <StackPanel Orientation="Horizontal" Spacing="3" HorizontalAlignment="Center">
+                <Button Classes="key-compact" Content="C" Click="KeyButton_Click"/>
+                <Button Classes="key-compact" Content="V" Click="KeyButton_Click"/>
+                <Button Classes="key-compact" Content="B" Click="KeyButton_Click"/>
+                <Button Classes="key-compact" Content="N" Click="KeyButton_Click"/>
+            </StackPanel>
+            
+            <StackPanel Orientation="Horizontal" Spacing="3" HorizontalAlignment="Center">
+                <Button Classes="key-compact" Content="M" Click="KeyButton_Click"/>
+                <Button Classes="key-compact" Content="," Click="SpecialKey_Click"/>
+                <Button Classes="key-compact" Content="." Click="SpecialKey_Click"/>
+                <Button Classes="key-compact" Content="/" Click="SpecialKey_Click"/>
+            </StackPanel>
+            
+            <StackPanel Orientation="Horizontal" Spacing="3" HorizontalAlignment="Center">
+                <Button Classes="key-compact-wide" Content="Shift" Click="KeyButton_Click"/>
+            </StackPanel>
+
+            <!-- Row 6: Space bar row -->
+            <StackPanel Orientation="Horizontal" Spacing="3" HorizontalAlignment="Center">
+                <Button Classes="key-compact" Content="Ctrl" Click="KeyButton_Click"/>
+                <Button Classes="key-compact" Content="Win" Click="KeyButton_Click"/>
+                <Button Classes="key-compact" Content="Alt" Click="KeyButton_Click"/>
+            </StackPanel>
+            
+            <StackPanel Orientation="Horizontal" Spacing="3" HorizontalAlignment="Center">
+                <Button Classes="key-compact-space" Content="Space" Click="Space_Click"/>
+            </StackPanel>
+            
+            <StackPanel Orientation="Horizontal" Spacing="3" HorizontalAlignment="Center">
+                <Button Classes="key-compact" Content="Alt" Click="KeyButton_Click"/>
+                <Button Classes="key-compact" Content="Fn" Click="KeyButton_Click"/>
+                <Button Classes="key-compact" Content="Menu" Click="KeyButton_Click"/>
+                <Button Classes="key-compact" Content="Ctrl" Click="KeyButton_Click"/>
+            </StackPanel>
+        </StackPanel>
+    </ScrollViewer>
+    
+    <Window.Styles>
+        <!-- Compact key -->
+        <Style Selector="Button.key-compact">
+            <Setter Property="Width" Value="85"/>
+            <Setter Property="Height" Value="50"/>
+            <Setter Property="Background" Value="#0066cc"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="CornerRadius" Value="4"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="BorderBrush" Value="#005599"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
+
+        <!-- Compact wide key -->
+        <Style Selector="Button.key-compact-wide">
+            <Setter Property="Width" Value="175"/>
+            <Setter Property="Height" Value="50"/>
+            <Setter Property="Background" Value="#0066cc"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="CornerRadius" Value="4"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="BorderBrush" Value="#005599"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
+
+        <!-- Compact spacebar -->
+        <Style Selector="Button.key-compact-space">
+            <Setter Property="Width" Value="355"/>
+            <Setter Property="Height" Value="50"/>
+            <Setter Property="Background" Value="#0066cc"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="CornerRadius" Value="4"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="BorderBrush" Value="#005599"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
+
+        <Style Selector="Button:pointerover /template/ ContentPresenter">
+            <Setter Property="Background" Value="{TemplateBinding Background}"/>
+        </Style>
+        <Style Selector="Button:pressed /template/ ContentPresenter">
+            <Setter Property="Background" Value="#005099"/>
+        </Style>
+    </Window.Styles>
+
+</Window>

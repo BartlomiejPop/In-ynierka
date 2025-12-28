@@ -9,6 +9,7 @@
         Background="#1a1a1a"
         WindowStartupLocation="CenterScreen">
 
+    <Viewbox Stretch="Uniform" x:Name="KeyboardContainer">
     <StackPanel Background="#1a1a1a" Margin="20" Spacing="8" VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Horizontal">
         <!-- Main Keyboard -->
         <StackPanel Background="#1a1a1a" Spacing="6" Width="1050">
@@ -154,6 +155,7 @@
             </StackPanel>
         </StackPanel>
     </StackPanel>
+    </Viewbox>
     <Window.Styles>
         <!-- Standard key -->
         <Style Selector="Button.key-std">
